@@ -1,8 +1,32 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>{% templatetag openvariable %} name {% templatetag closevariable %} for app '{{ app_name }}'</title>
-</head><body>
+{% templatetag openblock %} extends "base_template.html" {% templatetag closelock %}
+
+{% templatetag opencomment %} This is the title {% templatetag closecomment %}
+{% templatetag openblock %} block title {% templatetag closelock %}{% templatetag openvariable %} name {% templatetag closevariable %} for app '{{ app_name }}'{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag opencomment %} Here you put any extra stylesheets you need {% templatetag closecomment %}
+{% templatetag openblock %} block styles {% templatetag closelock %}
+<script src="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}{{ app_name }}/css/style.css"></script>
+{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag opencomment %} Here you put any extra js scripts you need {% templatetag closecomment %}
+{% templatetag openblock %} block scripts {% templatetag closelock %}
+<script src="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}{{ app_name }}/js/script.js"></script>
+{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag opencomment %} This is for extra miscelaneous items that go into the head {% templatetag closecomment %}
+{% templatetag openblock %} block posthead {% templatetag closelock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag opencomment %} Here goes header content {% templatetag closecomment %}
+{% templatetag openblock %} block header {% templatetag closelock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+
+{% templatetag opencomment %} Here goes footer content {% templatetag closecomment %}
+{% templatetag openblock %} block footer {% templatetag closelock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag opencomment %} Here goes the content for the page {% templatetag closecomment %}
+{% templatetag openblock %} block content {% templatetag closelock %}
 <h1>{% templatetag openvariable %} name {% templatetag closevariable %} for app '{{ app_name }}'</h1>
-<hr>
-</body></html>
+<hr/>
+This is a sample page :-)
+{% templatetag openblock %} endblock {% templatetag closeblock %}
 
