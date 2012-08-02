@@ -5,19 +5,54 @@
 
 {% templatetag opencomment %} Here you put any extra stylesheets you need {% templatetag closecomment %}
 {% templatetag openblock %} block styles {% templatetag closeblock %}
-<script src="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}{{ app_name }}/css/style.css"></script>
+<style type="text/less">
+@navbar-size: 50px;
+
+/* Body and structure
+-------------------------------------------------- */
+body {
+  position: relative;
+  padding-top: @navbar-size;
+  background-color: #fff;
+}
+</style>
 {% templatetag openblock %} endblock {% templatetag closeblock %}
 
 {% templatetag opencomment %} Here you put any extra js scripts you need {% templatetag closecomment %}
 {% templatetag openblock %} block scripts {% templatetag closeblock %}
-<script src="{% templatetag openvariable %} STATIC_URL {% templatetag closevariable %}{{ app_name }}/js/script.js"></script>
+<script type="text/coffeescript">
+# Functions:
+square = (x) -> x * x
+</script>
 {% templatetag openblock %} endblock {% templatetag closeblock %}
 
 {% templatetag opencomment %} This is for extra miscelaneous items that go into the head {% templatetag closecomment %}
 {% templatetag openblock %} block posthead {% templatetag closeblock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
 
 {% templatetag opencomment %} Here goes header content {% templatetag closecomment %}
-{% templatetag openblock %} block header {% templatetag closeblock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
+{% templatetag openblock %} block header {% templatetag closeblock %}
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">{{ app_name }}</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div>
+    </div>
+</div>
+</div>
+{% templatetag openblock %} endblock {% templatetag closeblock %}
 
 
 {% templatetag opencomment %} Here goes footer content {% templatetag closecomment %}
@@ -25,8 +60,17 @@
 
 {% templatetag opencomment %} Here goes the content for the page {% templatetag closecomment %}
 {% templatetag openblock %} block content {% templatetag closeblock %}
-<h1>{% templatetag openvariable %} name {% templatetag closevariable %} for app '{{ app_name }}'</h1>
-<hr/>
-This is a sample page :-)
+<br/>
+<div class="row">
+  <div class="span8 offset2 hero-unit">
+    <h1>{% templatetag openvariable %} name {% templatetag closevariable %} for app '{{ app_name }}'</h1>
+    <p>This is a sample page :-)</p>
+    <p>
+      <a class="btn btn-primary btn-large">
+      Learn more
+      </a>
+    </p>
+  </div>
+</div>
 {% templatetag openblock %} endblock {% templatetag closeblock %}
 
