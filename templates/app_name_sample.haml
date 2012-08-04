@@ -1,0 +1,67 @@
+{% templatetag openblock %} extends "base.html" {% templatetag closeblock %}
+
+{% templatetag opencomment %} This is the title {% templatetag closecomment %}
+{% templatetag openblock %} block title {% templatetag closeblock %}{% templatetag openvariable %} name {% templatetag closevariable %} for app '{{ app_name }}'{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag opencomment %} Here you put any extra stylesheets you need {% templatetag closecomment %}
+{% templatetag openblock %} block styles {% templatetag closeblock %}
+%style{:type => "text/less"}
+  @navbar-size: 50px;
+  
+  \/* Body and structure
+  \-------------------------------------------------- */
+  body {
+  position: relative;
+  padding-top: @navbar-size;
+  background-color: #fff;
+  }
+{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag opencomment %} Here you put any extra js scripts you need {% templatetag closecomment %}
+{% templatetag openblock %} block scripts {% templatetag closeblock %}
+%script{:type => "text/coffeescript"}
+  \# Functions:
+  square = (x) -> x * x
+{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag opencomment %} This is for extra miscelaneous items that go into the head {% templatetag closecomment %}
+{% templatetag openblock %} block posthead {% templatetag closeblock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag opencomment %} Here goes header content {% templatetag closecomment %}
+{% templatetag openblock %} block header {% templatetag closeblock %}
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.brand{:href => "#"} {{ app_name }}
+      .nav-collapse
+        %ul.nav
+          %li.active
+            %a{:href => "#"} Home
+          %li
+            %a{:href => "#"} Link
+          %li
+            %a{:href => "#"} Link
+          %li
+            %a{:href => "#"} Link
+      / /.nav-collapse
+{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+
+{% templatetag opencomment %} Here goes footer content {% templatetag closecomment %}
+{% templatetag openblock %} block footer {% templatetag closeblock %}{% templatetag openblock %} endblock {% templatetag closeblock %}
+
+{% templatetag opencomment %} Here goes the content for the page {% templatetag closecomment %}
+{% templatetag openblock %} block content {% templatetag closeblock %}
+%br/
+.row
+  .span8.offset2.hero-unit
+    %h1 {% templatetag openvariable %} name {% templatetag closevariable %} for app '{{ app_name }}'
+    %p This is a sample page :-)
+    %p
+      %a.btn.btn-primary.btn-large
+        Learn more
+{% templatetag openblock %} endblock {% templatetag closeblock %}
