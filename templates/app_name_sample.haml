@@ -5,23 +5,18 @@
 
 {% templatetag opencomment %} Here you put any extra stylesheets you need {% templatetag closecomment %}
 {% templatetag openblock %} block styles {% templatetag closeblock %}
-%style{:type => "text/less"}
-  @navbar-size: 50px;
-  
+%style
   \/* Body and structure
   \-------------------------------------------------- */
   body {
   position: relative;
-  padding-top: @navbar-size;
+  padding-top: 50px;
   background-color: #fff;
   }
 {% templatetag openblock %} endblock {% templatetag closeblock %}
 
 {% templatetag opencomment %} Here you put any extra js scripts you need {% templatetag closecomment %}
 {% templatetag openblock %} block scripts {% templatetag closeblock %}
-%script{:type => "text/coffeescript"}
-  \# Functions:
-  square = (x) -> x * x
 {% templatetag openblock %} endblock {% templatetag closeblock %}
 
 {% templatetag opencomment %} This is for extra miscelaneous items that go into the head {% templatetag closecomment %}
